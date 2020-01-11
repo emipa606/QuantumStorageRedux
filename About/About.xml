@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>Quantum Storage Redux</name>
+	<author>cheetah</author>
+	<supportedVersions>
+		<li>1.0</li>
+	</supportedVersions>
+	<description>Adds upgradeable storage and logistics solutions, based around the concept of Quantum Storage.
+Version {{version}}</description>
+</ModMetaData>

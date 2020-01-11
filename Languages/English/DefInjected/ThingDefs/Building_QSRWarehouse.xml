@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+	<Building_QSRWarehouse.label>Quantum Warehouse</Building_QSRWarehouse.label>
+	<Building_QSRWarehouse.description>Placed underneath stockpile zones in order to store items in a global quantum network.</Building_QSRWarehouse.description>
+</LanguageData>

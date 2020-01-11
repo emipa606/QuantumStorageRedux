@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+	<Building_QSRStockpile.label>Квантовый Запасник</Building_QSRStockpile.label>
+	<Building_QSRStockpile.description>Устанавливаемые в зонах хранения устройства, хранящие более одного штабеля предметов в клетке.</Building_QSRStockpile.description>
+</LanguageData>

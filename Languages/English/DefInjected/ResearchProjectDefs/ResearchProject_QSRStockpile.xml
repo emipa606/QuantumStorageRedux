@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+	<ResearchProject_QSRStockpile.label>Quantum Stockpiles</ResearchProject_QSRStockpile.label>
+	<ResearchProject_QSRStockpile.description>Allows construction of quantum stockpiles: devices that are placed underneath stockpile zones in order to store more than one item or stack of items in a given space.
+
+Each stockpile connected to it's own local quantum network.
+
+When powered, these stockpiles scan zone spaces adjacent to them and, if the zone's filter allows it, pull any items onto themselves.
+
+Items are steadily superposed, so each one remains fully accessible, and nothing catastrophic will happen even if the power supply fails.</ResearchProject_QSRStockpile.description>
+</LanguageData>
