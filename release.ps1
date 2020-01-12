@@ -1,7 +1,7 @@
 $zipName = "QunatumStorageRedux.zip"
 Remove-Item ../$zipName
 
-$version = "0.1.0"
+$version = "0.1.1"
 Write-Host 'Version:'$version
 
 New-Item -ItemType directory -Path ../QuantumStorageReduxRelease/ -Force
