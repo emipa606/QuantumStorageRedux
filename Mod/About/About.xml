@@ -4,8 +4,10 @@
 	<name>Quantum Storage Redux</name>
 	<author>cheetah</author>
 	<supportedVersions>
+		<li>1.1</li>
 		<li>1.0</li>
 	</supportedVersions>
+	<packageId>Cheetah.QuantumStorageRedux</packageId>
 	<description>Adds upgradeable storage and logistics solutions, based around the concept of Quantum Storage.
 Version {{version}}</description>
 </ModMetaData>

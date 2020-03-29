@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+	<ResearchProject_QSRRelay.label>Quantum Relays</ResearchProject_QSRRelay.label>
+	<ResearchProject_QSRRelay.description>Allows construction of quantum relays: stand-alone devices that can connect to the global quantum network to transfer items back and forth.
+
+When powered, relays scan adjacent stockpile zone (and storage building) spaces and send items in them to the connected network, provided that network has cells that accepts them and has higher or equal priority (compared to the scanned space).
+
+At the same time, connected network will try to push items onto the relay, as defined by relay's own filter, only one stacks of each allowed item, if relay's priority is higher or equal to that of the network's zone.</ResearchProject_QSRRelay.description>
+</LanguageData>
