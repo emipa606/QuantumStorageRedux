@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿#define DEBUG
+
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using HarmonyLib;
 
 namespace QuantumStorageRedux {
     [StaticConstructorOnStartup]
@@ -10,18 +13,23 @@ namespace QuantumStorageRedux {
             Default,
             Insertion,
             Relay,
+            Storage,
+            Thing,
         }
 
         private static readonly Dictionary<Ctx, bool> displaySettings = new Dictionary<Ctx, bool> {
             { Ctx.Default, true },
             { Ctx.Insertion, true },
             { Ctx.Relay, true },
+            { Ctx.Storage, true },
+            { Ctx.Thing, true },
         };
 
         [System.Diagnostics.Conditional("DEBUG")]
         public static void Message(Ctx ctx, string text) {
             if (displaySettings[ctx]) {
                 Log.Message("QSR." + ctx.ToString() + ": " + text);
+                FileLog.Log("QSR." + ctx.ToString() + ": " + text);
             }
         }
 
@@ -29,6 +37,7 @@ namespace QuantumStorageRedux {
         public static void Warning(Ctx ctx, string text) {
             if (displaySettings[ctx]) {
                 Log.Warning("QSR." + ctx.ToString() + ": " + text);
+                FileLog.Log("QSR." + ctx.ToString() + ": " + text);
             }
         }
 
@@ -36,6 +45,7 @@ namespace QuantumStorageRedux {
         public static void Error(Ctx ctx, string text) {
             if (displaySettings[ctx]) {
                 Log.Error("QSR." + ctx.ToString() + ": " + text);
+                FileLog.Log("QSR." + ctx.ToString() + ": " + text);
             }
         }
 
