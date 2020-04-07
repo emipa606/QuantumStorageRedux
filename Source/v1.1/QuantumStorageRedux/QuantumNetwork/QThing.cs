@@ -79,12 +79,12 @@ namespace QuantumStorageRedux {
         }
 
         public Thing Make() {
-            QLog.Warning(QLog.Ctx.Thing, "v----------  ----------v");
+            /*QLog.Warning(QLog.Ctx.Thing, "v----------  ----------v");
             QLog.Message(QLog.Ctx.Thing, "Executing Storage.Make(). Thing is:");
             QLog.Message(QLog.Ctx.Thing, this.thing.Label);
             QLog.Message(QLog.Ctx.Thing, this.thing.Stuff.ToStringSafe());
             QLog.Message(QLog.Ctx.Thing, this.thing.TryGetComp<CompQuality>()?.Quality.GetLabel());
-            QLog.Warning(QLog.Ctx.Thing, "^----------  ----------^");
+            QLog.Warning(QLog.Ctx.Thing, "^----------  ----------^");*/
             if (this.thing is Corpse corpseThing) {
                 var corpse = ThingMaker.MakeThing(corpseThing.InnerPawn.RaceProps.corpseDef) as Corpse;
                 corpseThing.GetDirectlyHeldThings().TryTransferToContainer(corpseThing.InnerPawn, corpse.GetDirectlyHeldThings());
@@ -93,17 +93,17 @@ namespace QuantumStorageRedux {
             }
 
             if (this.thing is UnfinishedThing unfinishedThing) {
-                QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Identified Unfinished Thing:");
+                /*QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Identified Unfinished Thing:");
                 QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: UnfinishedThing: " + this.thing.Label);
                 QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Setting Work Left to: " + unfinishedThing.workLeft);
-                QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Setting Creator to: " + unfinishedThing.Creator);
+                QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Setting Creator to: " + unfinishedThing.Creator);*/
 
                 UnfinishedThing unfinished = ThingMaker.MakeThing(unfinishedThing.def, this.stuff) as UnfinishedThing;
                 unfinished.workLeft = unfinishedThing.workLeft;
                 unfinished.Creator = unfinishedThing.Creator;
 
-                QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Set Work Left to: " + unfinished.workLeft);
-                QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Set Creator to: " + unfinished.Creator);
+                /*QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Set Work Left to: " + unfinished.workLeft);
+                QLog.Message(QLog.Ctx.Thing, "QThing.Make() isUnfinishedThing: Set Creator to: " + unfinished.Creator);*/
 
                 return unfinished;
             }
@@ -118,11 +118,11 @@ namespace QuantumStorageRedux {
            
 
             if ((oldQuality?.Quality != null) && (newQuality?.Quality != null) && (newQuality.Quality != oldQuality.Quality)) {
-                QLog.Message(QLog.Ctx.Thing, "QThing.Make(): Quality gleaned from original thing:");
+                /*QLog.Message(QLog.Ctx.Thing, "QThing.Make(): Quality gleaned from original thing:");
                 QLog.Message(QLog.Ctx.Thing, "QThing.Make(): CompQuality: " + this.thing.TryGetComp<CompQuality>()?.Quality.GetLabel());
 
                 QLog.Message(QLog.Ctx.Thing, "QThing.Make(): Quality assigned to new thing:");
-                QLog.Message(QLog.Ctx.Thing, "QThing.Make(): CompQuality: " + thing.TryGetComp<CompQuality>()?.Quality.GetLabel());
+                QLog.Message(QLog.Ctx.Thing, "QThing.Make(): CompQuality: " + thing.TryGetComp<CompQuality>()?.Quality.GetLabel());*/
 
                 thing.TryGetComp<CompQuality>().SetQuality(oldQuality.Quality, ArtGenerationContext.Colony);
             }
@@ -132,17 +132,17 @@ namespace QuantumStorageRedux {
             thing.HitPoints = this.hitPoints;
             thing.stackCount = this.stackCount;
 
-            QLog.Message(QLog.Ctx.Thing, "New Thing is:");
+            /*QLog.Message(QLog.Ctx.Thing, "New Thing is:");
             QLog.Message(QLog.Ctx.Thing, thing.def.defName);
             QLog.Message(QLog.Ctx.Thing, thing.Stuff.ToStringSafe());
-            QLog.Message(QLog.Ctx.Thing, thing.TryGetComp<CompQuality>()?.Quality.GetLabel());
+            QLog.Message(QLog.Ctx.Thing, thing.TryGetComp<CompQuality>()?.Quality.GetLabel());*/
 
             return thing;
         }
 
         public QThing Insert(Map map, IntVec3 cell) {
-            QLog.Warning(QLog.Ctx.Thing, "v---------- QThing.Insert ----------v");
-            QLog.Message(QLog.Ctx.Thing, "Executing QThing.Insert");
+            /*QLog.Warning(QLog.Ctx.Thing, "v---------- QThing.Insert ----------v");
+            QLog.Message(QLog.Ctx.Thing, "Executing QThing.Insert");*/
 
             switch (this.source) {
                 case Source.Composite:
@@ -163,7 +163,7 @@ namespace QuantumStorageRedux {
                     break;
             }
 
-            QLog.Warning(QLog.Ctx.Thing, "^---------- QThing.Insert ----------^");
+            /*QLog.Warning(QLog.Ctx.Thing, "^---------- QThing.Insert ----------^");*/
             return this;
         }
 

@@ -11,9 +11,9 @@ namespace QuantumStorageRedux {
             harmony = new Harmony("pw.cheetah.rimworld.quantumstorageredux");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
-            QLog.Warning(QLog.Ctx.Default, " v--------------- QUANTUM LOG ---------------v");
+            /*QLog.Warning(QLog.Ctx.Default, " v--------------- QUANTUM LOG ---------------v");
             QLog.Message(QLog.Ctx.Default, "Executing Quantum Storage | Build 40");
-            QLog.Warning(QLog.Ctx.Default, " v--------------- QUANTUM LOG ---------------v");
+            QLog.Warning(QLog.Ctx.Default, " v--------------- QUANTUM LOG ---------------v");*/
         }
     }
 
