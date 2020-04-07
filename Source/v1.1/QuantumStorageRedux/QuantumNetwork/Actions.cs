@@ -1,4 +1,6 @@
 ﻿using Verse;
+using RimWorld;
+
 
 namespace QuantumStorageRedux {
     internal class DestroyAction : IPerformable {
@@ -78,8 +80,12 @@ namespace QuantumStorageRedux {
         }
 
         public void Perform() {
-            Utils.DropSound(this.map, this.cell, this.qthing.def);
+            /*Silence Drop Sound*/
+            /*Utils.DropSound(this.map, this.cell, this.qthing.def);*/
+
+            /*GenSpawn, instead of TryPlace*/
             GenPlace.TryPlaceThing(this.qthing.Make(), this.cell, this.map, ThingPlaceMode.Near);
+            /*GenSpawn.Spawn(this.qthing.Make().def, this.cell, this.map, 0);*/
         }
         public string Display() {
             return "SpawnNear " + LogUtils.Display(this.qthing) + " on " + this.cell;
