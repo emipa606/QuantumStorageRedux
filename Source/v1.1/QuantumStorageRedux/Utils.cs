@@ -111,31 +111,9 @@ namespace QuantumStorageRedux {
 
             switch (wipeMode) {
                 case WipeMode.Vanish:
-                    QLog.Message(QLog.Ctx.Thing, "Spawning with Wipemode Vanish");
+                    /*QLog.Message(QLog.Ctx.Thing, "Spawning with Wipemode Vanish");*/
                     GenSpawn.WipeExistingThings(loc, rot, thing.def, map, DestroyMode.Vanish);
                     /*GenSpawn.Spawn(thing.def, loc, map, WipeMode.Vanish);*/
-
-                    /*                    Thing newThing = GenSpawn.Spawn(thing.def, loc, map, WipeMode.Vanish);
-                                        QualityCategory quality = new Quality(thing).getQuality();
-
-                                        newThing.TryGetComp<CompQuality>()?.SetQuality(quality, ArtGenerationContext.Colony);
-
-                                        QLog.Message(QLog.Ctx.Thing, "Utils.Spawn: Attempting to set Quality: ");
-                                        QLog.Message(QLog.Ctx.Thing, quality.GetLabel());
-
-                                        QLog.Message(QLog.Ctx.Thing, "Quality.setQuality: Quality set to: ");
-                                        QLog.Message(QLog.Ctx.Thing, newThing.TryGetComp<CompQuality>()?.Quality.GetLabel());*/
-
-
-
-                    /*if (Quality.checkQuality(thing)) {
-                                            QLog.Warning(QLog.Ctx.Thing, "v---------- Utils.Spawn ----------v");
-                                            QLog.Message(QLog.Ctx.Thing, "Thing had quality, attempting to set");
-                                            Quality.fetchQuality(thing);
-                                            QLog.Message(QLog.Ctx.Thing, Quality.fetchQuality(thing).ToString());
-                                            QLog.Warning(QLog.Ctx.Thing, "^---------- Utils.Spawn ----------^");
-                                        }*/
-
                     break;
                 case WipeMode.FullRefund:
                     GenSpawn.WipeAndRefundExistingThings(loc, rot, thing.def, map);

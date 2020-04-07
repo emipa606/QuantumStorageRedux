@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Reflection;
-/* Update Harmony to HarmonyLib*/
-/*using Harmony;*/
 using HarmonyLib;
 using Verse;
 
 namespace QuantumStorageRedux {
     internal static class qsrHarmony {
-        /*private static MethodInfo originalSpawn;
-        private static MethodInfo quantumSpawn;*/
-        /* Update HarmonyInstance to Harmony */
-        /*private static HarmonyInstance harmony;*/
         private static Harmony harmony;
 
         public static void Patch() {
@@ -18,7 +12,7 @@ namespace QuantumStorageRedux {
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             QLog.Warning(QLog.Ctx.Default, " v--------------- QUANTUM LOG ---------------v");
-            QLog.Message(QLog.Ctx.Default, "Executing Quantum Storage | Build 35");
+            QLog.Message(QLog.Ctx.Default, "Executing Quantum Storage | Build 40");
             QLog.Warning(QLog.Ctx.Default, " v--------------- QUANTUM LOG ---------------v");
         }
     }
