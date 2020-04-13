@@ -2,7 +2,7 @@
 
 <Defs>
   <DesignationCategoryDef>
-    <defName>Storage</defName>
+    <defName>QSRStorage</defName>
     <label>storage</label>
     <description>Quantum Storage solutions.</description>
     <order>225</order>

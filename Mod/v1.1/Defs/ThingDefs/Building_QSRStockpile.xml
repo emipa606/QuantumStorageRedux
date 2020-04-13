@@ -5,7 +5,7 @@
 		<defName>Building_QSRStockpile</defName>
 		<label>Quantum Stockpile</label>
 		<description>Quantum Stockpile description.</description>
-		<designationCategory>Storage</designationCategory>
+		<designationCategory>QSRStorage</designationCategory>
 		<category>Building</category>
 		<thingClass>Building</thingClass>
 		<tickerType>Normal</tickerType>

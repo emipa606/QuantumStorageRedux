@@ -5,7 +5,7 @@
 		<defName>Building_QSRWarehouse</defName>
 		<label>Quantum Warehouse</label>
 		<description>Quantum Warehouse description.</description>
-		<designationCategory>Storage</designationCategory>
+		<designationCategory>QSRStorage</designationCategory>
 		<category>Building</category>
 		<thingClass>Building</thingClass>
 		<tickerType>Normal</tickerType>

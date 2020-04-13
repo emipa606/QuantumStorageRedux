@@ -5,7 +5,7 @@
     <defName>Building_QSRRelay</defName>
     <label>Quantum Relay</label>
     <description>Quantum Relay description.</description>
-    <designationCategory>Storage</designationCategory>
+    <designationCategory>QSRStorage</designationCategory>
     <category>Building</category>
     <thingClass>Building_Storage</thingClass>
     <tickerType>Normal</tickerType>
