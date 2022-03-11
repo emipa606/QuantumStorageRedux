@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<LanguageData>
-  <QSRComponents_LocalNetwork>Подключен к локальной квантовой сети.</QSRComponents_LocalNetwork>
-  <QSRComponents_GlobalNetwork>Подключен к глобальной квантовой сети.</QSRComponents_GlobalNetwork>
-  <QSRComponents_MaxStacks>Максимум штабелей на клетку:</QSRComponents_MaxStacks>
-</LanguageData>

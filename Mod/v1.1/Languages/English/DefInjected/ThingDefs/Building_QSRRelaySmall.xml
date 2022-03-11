@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<LanguageData>
-	<Building_QSRRelaySmall.label>Small Quantum Relay</Building_QSRRelaySmall.label>
-	<Building_QSRRelaySmall.description>Connects to global quantum network to transfer items back and forth.</Building_QSRRelaySmall.description>
-</LanguageData>

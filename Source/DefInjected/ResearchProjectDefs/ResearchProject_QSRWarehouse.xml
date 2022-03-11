@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ResearchProject_QSRWarehouse.label>Quantum Warehouses</ResearchProject_QSRWarehouse.label>
+  <ResearchProject_QSRWarehouse.description>Allows construction of quantum warehouses: devices that are placed underneath stockpile zones to form global quantum network of the all quantum warehouses, on top of acting like quantum stockpiles themselves.
+
+When powered, a zone's warehouse makes sure that all warehouses in the global quantum network are evenly filled and tries to minimize the amount of incomplete item stacks.</ResearchProject_QSRWarehouse.description>
+</LanguageData>

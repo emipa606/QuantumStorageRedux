@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<LanguageData>
-	<Building_QSRStockpileSmall.label>Small Quantum Stockpile</Building_QSRStockpileSmall.label>
-	<Building_QSRStockpileSmall.description>Placed underneath stockpile zones in order to store more than one item or stack of items in a given space.</Building_QSRStockpileSmall.description>
-</LanguageData>

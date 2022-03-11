@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DesignationCategoryDef>
+    <defName>QSRStorage</defName>
+    <label>storage</label>
+    <description>Quantum Storage solutions.</description>
+    <order>225</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+      <li>Designator_ZoneAddStockpile_Resources</li>
+      <li>Designator_ZoneAddStockpile_Dumping</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+</Defs>

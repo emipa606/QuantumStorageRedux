@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<LanguageData>
-  <QSRComponents_LocalNetwork>Connected to a local quantum network.</QSRComponents_LocalNetwork>
-  <QSRComponents_GlobalNetwork>Connected to a global quantum network.</QSRComponents_GlobalNetwork>
-  <QSRComponents_MaxStacks>Maximum stacks per cell:</QSRComponents_MaxStacks>
-</LanguageData>

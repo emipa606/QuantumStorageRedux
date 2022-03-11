@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ResearchProject_QSRCapacityUpgrade_1.label>Quantum Storage capacity 1</ResearchProject_QSRCapacityUpgrade_1.label>
+  <ResearchProject_QSRCapacityUpgrade_1.description>Increases Quantum Storage cell capacity by 2, up to 6 stacks per cell.</ResearchProject_QSRCapacityUpgrade_1.description>
+  <ResearchProject_QSRCapacityUpgrade_2.label>Quantum Storage capacity 2</ResearchProject_QSRCapacityUpgrade_2.label>
+  <ResearchProject_QSRCapacityUpgrade_2.description>Increases Quantum Storage cell capacity by 2, up to 8 stacks per cell.</ResearchProject_QSRCapacityUpgrade_2.description>
+  <ResearchProject_QSRCapacityUpgrade_3.label>Quantum Storage capacity 3</ResearchProject_QSRCapacityUpgrade_3.label>
+  <ResearchProject_QSRCapacityUpgrade_3.description>Increases Quantum Storage cell capacity by 2, up to 10 stacks per cell.</ResearchProject_QSRCapacityUpgrade_3.description>
+  <ResearchProject_QSRCapacityUpgrade_4.label>Quantum Storage capacity 4</ResearchProject_QSRCapacityUpgrade_4.label>
+  <ResearchProject_QSRCapacityUpgrade_4.description>Increases Quantum Storage cell capacity by 2, up to 12 stacks per cell.</ResearchProject_QSRCapacityUpgrade_4.description>
+</LanguageData>

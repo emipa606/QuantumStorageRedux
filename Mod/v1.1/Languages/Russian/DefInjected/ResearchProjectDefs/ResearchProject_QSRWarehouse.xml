@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<LanguageData>
-	<ResearchProject_QSRWarehouse.label>Квантовые Склады</ResearchProject_QSRWarehouse.label>
-	<ResearchProject_QSRWarehouse.description>Позволяет строить квантовые склады: устройства, которые размещаются под зонами запасов, чтобы сформировать глобальную квантовую сеть всех квантовых складов, в дополнение к действию, подобному самим квантовым запасам.
-
-При питании склад зоны обеспечивает равномерное заполнение всех складов в глобальной квантовой сети и пытается минимизировать количество незавершенных стеков предметов.</ResearchProject_QSRWarehouse.description>
-</LanguageData>

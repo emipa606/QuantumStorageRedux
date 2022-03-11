@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>ResearchProject_QSRStockpile</defName>
+    <tab>QuantumStorage</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>1</researchViewY>
+    <label>Quantum Stockpiles</label>
+    <description>Quantum Stockpiles description.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>Electricity</li>
+      <li>Machining</li>
+    </prerequisites>
+  </ResearchProjectDef>
+</Defs>
