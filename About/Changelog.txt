@@ -1,4 +1,7 @@
 # Changelog for QuantumStorageRedux
 
+1.3.2 - Fixed the place-workers, quantum-buildings was never supposed to be placeable next to eachother
+
+
 1.3.1 - Updated to 1.2 and 1.3
 

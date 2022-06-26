@@ -10,7 +10,7 @@ namespace QuantumStorageRedux;
 
 public static class Utils
 {
-    public static Type[] QuantumCompClasses =
+    public static readonly Type[] QuantumCompClasses =
     {
         typeof(CompQSRStockpile),
         typeof(CompQSRWarehouse),

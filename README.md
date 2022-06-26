@@ -38,9 +38,6 @@ Differences from the original Quantum Storage mod:
 
 
 
-This is an early release, there can be bugs and issues, so feel free to contribute.
-https://github.com/cheetah/QuantumStorageRedux
-
 ![Image](https://i.imgur.com/PwoNOj4.png)
 
 
@@ -51,5 +48,6 @@ https://github.com/cheetah/QuantumStorageRedux
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
