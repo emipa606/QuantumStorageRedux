@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Building_QSRBase">
+    <defName>Building_QSRRelay</defName>
+    <label>Quantum Relay</label>
+    <description>Quantum Relay description.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>QSR_Buildings/Building_QSRRelay</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <fillPercent>0.2</fillPercent>
+    <researchPrerequisites>
+      <li>ResearchProject_QSRRelay</li>
+    </researchPrerequisites>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Plasteel>5</Plasteel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <soundPowerOn>Power_OnSmall</soundPowerOn>
+        <soundPowerOff>Power_OffSmall</soundPowerOff>
+      </li>
+      <li Class="QuantumStorageRedux.CompProperties_QSRRelay" />
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+  </ThingDef>
+</Defs>

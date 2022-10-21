@@ -20,18 +20,8 @@ internal class PlaceWorker_QSRNoQSOverlap : PlaceWorker
                     return true;
                 }
 
-                if (thingToCheck.def.entityDefToBuild == null)
-                {
-                    return false;
-                }
-
-                if (thingToCheck.def.entityDefToBuild is ThingDef { comps: { } } thingDef &&
-                    thingDef.comps.Any(comp => Utils.QuantumCompClasses.Contains(comp.compClass)))
-                {
-                    return true;
-                }
-
-                return false;
+                return thingToCheck.def.entityDefToBuild is ThingDef { comps: { } } thingDef &&
+                       thingDef.comps.Any(comp => Utils.QuantumCompClasses.Contains(comp.compClass));
             }))
         {
             return "PlaceWorker_QSRNoQSOverlap".Translate();

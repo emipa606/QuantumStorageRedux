@@ -35,11 +35,6 @@ internal static class QNetworkManager
 
     public static bool AnyNetworkIsFull()
     {
-        if (!globalNetworks.Any(pair => pair.Value.IsFull()))
-        {
-            return localNetworks.Any(network => network.IsFull());
-        }
-
-        return true;
+        return globalNetworks.Any(pair => pair.Value.IsFull()) || localNetworks.Any(network => network.IsFull());
     }
 }

@@ -26,12 +26,7 @@ public static class Utils
         }
 
         var thing = cell.GetThingList(map).Find(x => x.GetType().ToString().Equals("RimWorld.Building_Storage"));
-        if (thing != null)
-        {
-            return (thing as Building_Storage)?.GetStoreSettings();
-        }
-
-        return null;
+        return (thing as Building_Storage)?.GetStoreSettings();
     }
 
     public static StoragePriority Priority(Map map, IntVec3 cell)
@@ -52,12 +47,7 @@ public static class Utils
         }
 
         var value = GenMath.RoundedHundredth(qthing.hitPoints / (float)qthing.thing.MaxHitPoints);
-        if (!storageSettings.filter.AllowedHitPointsPercents.IncludesEpsilon(Mathf.Clamp01(value)))
-        {
-            return false;
-        }
-
-        return true;
+        return storageSettings.filter.AllowedHitPointsPercents.IncludesEpsilon(Mathf.Clamp01(value));
     }
 
     public static List<Thing> GetItemList(Map map, IntVec3 cell)
@@ -84,10 +74,7 @@ public static class Utils
 
     public static void DropSound(Map map, IntVec3 cell, ThingDef thingDef)
     {
-        if (thingDef.soundDrop != null)
-        {
-            thingDef.soundDrop.PlayOneShot(SoundInfo.InMap(new TargetInfo(cell, map)));
-        }
+        thingDef.soundDrop?.PlayOneShot(SoundInfo.InMap(new TargetInfo(cell, map)));
     }
 
     public static Thing Spawn(Thing thing, IntVec3 loc, Map map, Rot4 rot, WipeMode wipeMode = WipeMode.Vanish,
@@ -159,10 +146,7 @@ public static class Utils
                 break;
         }
 
-        if (thing.holdingOwner != null)
-        {
-            thing.holdingOwner.Remove(thing);
-        }
+        thing.holdingOwner?.Remove(thing);
 
         thing.Position = loc;
         thing.Rotation = rot;

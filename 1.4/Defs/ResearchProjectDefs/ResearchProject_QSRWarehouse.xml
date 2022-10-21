@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>ResearchProject_QSRWarehouse</defName>
+    <tab>QuantumStorage</tab>
+    <researchViewX>1</researchViewX>
+    <researchViewY>1</researchViewY>
+    <label>Quantum Warehouses</label>
+    <description>Quantum Warehouses description.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ResearchProject_QSRStockpile</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Building_QSRBase">
+    <defName>Building_QSRStockpileSmall</defName>
+    <label>Small Quantum Stockpile</label>
+    <description>Small Quantum Stockpile description.</description>
+    <graphicData>
+      <texPath>QSR_Buildings/Building_QSRStockpileSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <researchPrerequisites>
+      <li>ResearchProject_QSRStockpile</li>
+    </researchPrerequisites>
+    <passability>Standable</passability>
+    <building>
+      <isEdifice>False</isEdifice>
+    </building>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <soundPowerOn>Power_OnSmall</soundPowerOn>
+        <soundPowerOff>Power_OffSmall</soundPowerOff>
+      </li>
+      <li Class="QuantumStorageRedux.CompProperties_QSRStockpile" />
+    </comps>
+  </ThingDef>
+</Defs>

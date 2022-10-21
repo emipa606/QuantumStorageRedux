@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="Building_QSRBase">
+    <defName>Building_QSRWarehouse</defName>
+    <label>Quantum Warehouse</label>
+    <description>Quantum Warehouse description.</description>
+    <graphicData>
+      <texPath>QSR_Buildings/Building_QSRWarehouse</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <researchPrerequisites>
+      <li>ResearchProject_QSRWarehouse</li>
+    </researchPrerequisites>
+    <passability>Standable</passability>
+    <building>
+      <isEdifice>False</isEdifice>
+    </building>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Plasteel>10</Plasteel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>750</basePowerConsumption>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <soundPowerOn>Power_OnSmall</soundPowerOn>
+        <soundPowerOff>Power_OffSmall</soundPowerOff>
+      </li>
+      <li Class="QuantumStorageRedux.CompProperties_QSRWarehouse" />
+    </comps>
+  </ThingDef>
+</Defs>

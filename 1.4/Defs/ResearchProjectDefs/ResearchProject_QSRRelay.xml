@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>ResearchProject_QSRRelay</defName>
+    <tab>QuantumStorage</tab>
+    <researchViewX>2</researchViewX>
+    <researchViewY>1</researchViewY>
+    <label>Quantum Relays</label>
+    <description>Quantum Relays description.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ResearchProject_QSRWarehouse</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+</Defs>
