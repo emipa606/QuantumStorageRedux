@@ -7,15 +7,15 @@ namespace QuantumStorageRedux;
 [StaticConstructorOnStartup]
 internal static class QNetworkManager
 {
-    private static readonly HashSet<QNetwork> localNetworks = new HashSet<QNetwork>();
+    private static readonly HashSet<QNetwork> localNetworks = [];
 
     private static readonly Dictionary<Map, QNetwork> globalNetworks = new Dictionary<Map, QNetwork>();
 
     public static QNetwork Get(Map map)
     {
-        if (globalNetworks.ContainsKey(map))
+        if (globalNetworks.TryGetValue(map, out var network))
         {
-            return globalNetworks[map];
+            return network;
         }
 
         var qNetwork = new QNetwork();

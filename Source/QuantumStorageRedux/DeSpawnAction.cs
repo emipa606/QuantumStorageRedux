@@ -2,15 +2,8 @@ using Verse;
 
 namespace QuantumStorageRedux;
 
-internal class DeSpawnAction : IPerformable
+internal class DeSpawnAction(Thing thing) : IPerformable
 {
-    private readonly Thing thing;
-
-    public DeSpawnAction(Thing thing)
-    {
-        this.thing = thing;
-    }
-
     public void Perform()
     {
         if (!thing.Spawned)

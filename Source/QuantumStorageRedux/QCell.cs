@@ -3,18 +3,10 @@ using Verse;
 
 namespace QuantumStorageRedux;
 
-internal class QCell
+internal class QCell(IntVec3 cell, StorageSettings storageSettings, QThing[] qthings)
 {
-    public IntVec3 cell;
+    public readonly QThing[] qthings = qthings;
 
-    public QThing[] qthings;
-
-    public StorageSettings storageSettings;
-
-    public QCell(IntVec3 cell, StorageSettings storageSettings, QThing[] qthings)
-    {
-        this.cell = cell;
-        this.storageSettings = storageSettings;
-        this.qthings = qthings;
-    }
+    public readonly StorageSettings storageSettings = storageSettings;
+    public IntVec3 cell = cell;
 }

@@ -35,11 +35,11 @@ internal class QStorage
     {
         this.kind = kind;
         this.cellCapacity = cellCapacity;
-        excluded = new List<QThing>();
+        excluded = [];
         switch (this.kind)
         {
             case Kind.Relay:
-                existingDefs = new HashSet<ThingDef>();
+                existingDefs = [];
                 break;
             case Kind.Storage:
                 defsIndex = new Dictionary<ThingDef, List<(int, int)>>();
@@ -196,7 +196,7 @@ internal class QStorage
 
     public List<IPerformable> Diff()
     {
-        return cells.Zip(storage).Aggregate(new List<IPerformable>(),
+        return cells.Zip(storage).Aggregate([],
             delegate(List<IPerformable> actions, (IntVec3, QCell) x)
             {
                 var item = x.Item1;
@@ -207,8 +207,9 @@ internal class QStorage
                     var thing = itemList.ElementAtOrDefault(i);
                     var qThing = item2.qthings[i];
                     if (qThing != null && (thing == null || qThing.source == QThing.Source.Composite ||
-                                           thing.def != qThing.def || thing.stackCount != qThing.stackCount ||
-                                           thing.HitPoints != qThing.hitPoints))
+                                           thing.def != qThing.def ||
+                                           thing.stackCount !=
+                                           qThing.stackCount || thing.HitPoints != qThing.hitPoints))
                     {
                         actions = actions.Concat(qThing.actions).ToList();
                     }

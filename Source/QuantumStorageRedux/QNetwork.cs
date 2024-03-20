@@ -81,15 +81,10 @@ internal class QNetwork
 
         currentTick = tick;
         cellCapacity = CalculateCellCapacity();
-        var intVec3s = new HashSet<IntVec3>(input
-            .Where(x => Utils.PoweredOn(x.Key))
-            .SelectMany(x => x.Value));
-        var cells2 = storage
-            .Where(x => Utils.PoweredOn(x.Key))
-            .SelectMany(x => x.Value).ToList();
-        var source = (from cells in (from x in relays
-                where Utils.PoweredOn(x.Key)
-                select x.Value.ToList()).ToList()
+        var intVec3s =
+            new HashSet<IntVec3>(input.Where(powerTrader => Utils.PoweredOn(powerTrader.Key)).SelectMany(x => x.Value));
+        var cells2 = storage.Where(storeSpace => Utils.PoweredOn(storeSpace.Key)).SelectMany(x => x.Value).ToList();
+        var source = (from cells in (from x in relays where Utils.PoweredOn(x.Key) select x.Value.ToList()).ToList()
             select new QStorage(QStorage.Kind.Relay, 1).FromCells(map, cells,
                 delegate(StorageSettings storageSettings, Thing thing)
                 {
@@ -103,12 +98,10 @@ internal class QNetwork
         var qstorage = new QStorage(QStorage.Kind.Storage, cellCapacity).FromCells(map, cells2,
             (_, thing) => thing.stackCount >= thing.def.stackLimit);
         (from thing in Enumerable.Concat(
-                second: from thing in intVec3s
-                    .Where(cell => Utils.Priority(map, cell) != StoragePriority.Unstored)
+                second: from thing in intVec3s.Where(cell => Utils.Priority(map, cell) != StoragePriority.Unstored)
                     .SelectMany(cell => Utils.GetItemList(map, cell))
                 select new QThing(thing, QThing.Source.Input),
-                first: source.SelectMany(qrelay => qrelay.ExcludedThings())
-                    .Concat(qstorage.ExcludedThings()))
+                first: source.SelectMany(qrelay => qrelay.ExcludedThings()).Concat(qstorage.ExcludedThings()))
             group thing by thing.stackCount < thing.def.stackLimit).Deconstruct(out var pos, out var neg);
         var second2 = MergePartialStacks(pos);
         var insertionQueue = neg.Concat(second2).ToList();
@@ -120,8 +113,7 @@ internal class QNetwork
         qstorage.Insert(insertionQueue);
         var second4 = qstorage.Diff();
         isFull = insertionQueue.Any();
-        foreach (var item in insertionQueue
-                     .SelectMany(qthing => qthing.MoveOut(map, intVec3s.RandomElement()).actions)
+        foreach (var item in insertionQueue.SelectMany(qthing => qthing.MoveOut(map, intVec3s.RandomElement()).actions)
                      .Concat(second3).Concat(second4))
         {
             item.Perform();
@@ -156,8 +148,7 @@ internal class QNetwork
 
     private List<QThing> MergePartialStacks(IEnumerable<QThing> partialStacks)
     {
-        return (from x in partialStacks
-            group x by x.def.shortHash).Aggregate(new List<QThing>(),
+        return partialStacks.GroupBy(x => x.def.shortHash).Aggregate([],
             delegate(List<QThing> qthings, IGrouping<ushort, QThing> defStacks)
             {
                 var qThing = defStacks.Aggregate(new QThing(defStacks.First().thing, QThing.Source.Merge),

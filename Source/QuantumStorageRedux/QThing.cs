@@ -19,9 +19,13 @@ internal class QThing
 
     private readonly List<QThing> absorbed;
 
-    public List<IPerformable> actions;
+    public readonly ThingDef def;
 
-    public ThingDef def;
+    public readonly ThingDef stuff;
+
+    public readonly Thing thing;
+
+    public List<IPerformable> actions;
 
     public int hitPoints;
 
@@ -29,17 +33,13 @@ internal class QThing
 
     public int stackCount;
 
-    public ThingDef stuff;
-
-    public Thing thing;
-
     public QThing(Thing thing, Source source)
     {
         this.source = source;
         this.thing = thing;
         def = thing.def;
         stuff = thing.Stuff;
-        actions = new List<IPerformable>();
+        actions = [];
         if (this.source != Source.Merge)
         {
             stackCount = thing.stackCount;
@@ -48,7 +48,7 @@ internal class QThing
 
         if (this.source == Source.Merge)
         {
-            absorbed = new List<QThing>();
+            absorbed = [];
         }
     }
 

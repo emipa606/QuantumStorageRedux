@@ -2,20 +2,8 @@ using Verse;
 
 namespace QuantumStorageRedux;
 
-internal class SpawnNearAction : IPerformable
+internal class SpawnNearAction(Map map, IntVec3 cell, QThing qthing) : IPerformable
 {
-    private readonly IntVec3 cell;
-    private readonly Map map;
-
-    private readonly QThing qthing;
-
-    public SpawnNearAction(Map map, IntVec3 cell, QThing qthing)
-    {
-        this.map = map;
-        this.cell = cell;
-        this.qthing = qthing;
-    }
-
     public void Perform()
     {
         GenPlace.TryPlaceThing(qthing.Make(), cell, map, ThingPlaceMode.Near);

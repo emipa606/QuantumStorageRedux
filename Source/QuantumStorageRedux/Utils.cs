@@ -11,11 +11,11 @@ namespace QuantumStorageRedux;
 public static class Utils
 {
     public static readonly Type[] QuantumCompClasses =
-    {
+    [
         typeof(CompQSRStockpile),
         typeof(CompQSRWarehouse),
         typeof(CompQSRRelay)
-    };
+    ];
 
     public static StorageSettings GetStorageSettings(Map map, IntVec3 cell)
     {
@@ -78,7 +78,7 @@ public static class Utils
     }
 
     public static Thing Spawn(Thing thing, IntVec3 loc, Map map, Rot4 rot, WipeMode wipeMode = WipeMode.Vanish,
-        bool respawningAfterLoad = false)
+        bool respawningAfterLoad = false, bool forbidLeavings = false)
     {
         if (thing.Spawned)
         {
@@ -142,7 +142,7 @@ public static class Utils
                 GenSpawn.WipeExistingThings(loc, rot, thing.def, map, DestroyMode.Vanish);
                 break;
             case WipeMode.FullRefund:
-                GenSpawn.WipeAndRefundExistingThings(loc, rot, thing.def, map);
+                GenSpawn.WipeAndRefundExistingThings(loc, rot, thing.def, map, false);
                 break;
         }
 

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -38,7 +37,7 @@ internal class Alert_NoQuantumStorageSpace : Alert
             return true;
         }
 
-        var report = new AlertReport { culpritsThings = new List<Thing>(), active = true };
+        var report = new AlertReport { culpritsThings = [], active = true };
         foreach (var building in storages)
         {
             report.culpritsThings.Add(building);

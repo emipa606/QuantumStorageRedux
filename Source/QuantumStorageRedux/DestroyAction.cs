@@ -2,15 +2,8 @@ using Verse;
 
 namespace QuantumStorageRedux;
 
-internal class DestroyAction : IPerformable
+internal class DestroyAction(Thing thing) : IPerformable
 {
-    private readonly Thing thing;
-
-    public DestroyAction(Thing thing)
-    {
-        this.thing = thing;
-    }
-
     public void Perform()
     {
         if (thing.Destroyed)
