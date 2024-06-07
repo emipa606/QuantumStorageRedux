@@ -27,6 +27,8 @@ internal class QThing
 
     public List<IPerformable> actions;
 
+    public GeneSet geneSet;
+
     public int hitPoints;
 
     public Source source;
@@ -37,6 +39,11 @@ internal class QThing
     {
         this.source = source;
         this.thing = thing;
+        if (thing is Genepack genepack)
+        {
+            geneSet = genepack.GeneSet;
+        }
+
         def = thing.def;
         stuff = thing.Stuff;
         actions = [];
@@ -113,6 +120,13 @@ internal class QThing
                 obj.Creator = unfinishedThing.Creator;
                 return obj;
             }
+        }
+
+        if (thing is Genepack)
+        {
+            var pack = (Genepack)ThingMaker.MakeThing(ThingDefOf.Genepack);
+            pack.Initialize(geneSet.GenesListForReading);
+            return pack;
         }
 
         var makeThing = ThingMaker.MakeThing(def, stuff);
