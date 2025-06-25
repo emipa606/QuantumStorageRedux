@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <ResearchProject_QSRStockpile.label>Quantum Stockpiles</ResearchProject_QSRStockpile.label>
   <ResearchProject_QSRStockpile.description>Allows construction of quantum stockpiles: devices that are placed underneath stockpile zones in order to store more than one item or stack of items in a given space.

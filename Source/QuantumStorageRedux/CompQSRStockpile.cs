@@ -20,9 +20,9 @@ internal class CompQSRStockpile : ThingComp
         QNetworkManager.RegisterLocalNetwork(network);
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
         QNetworkManager.UnregisterLocalNetwork(network);
     }
 
@@ -39,10 +39,10 @@ internal class CompQSRStockpile : ThingComp
 
     public override void CompTick()
     {
-        StockpileTick(100);
+        stockpileTick(100);
     }
 
-    private void StockpileTick(int tickAmount)
+    private void stockpileTick(int tickAmount)
     {
         if (Find.TickManager.TicksGame % tickAmount == 0 && Utils.PoweredOn(powerTrader))
         {

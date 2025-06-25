@@ -19,9 +19,9 @@ internal class CompQSRWarehouse : ThingComp
         network.RegisterStorage(powerTrader, GenAdj.CellsOccupiedBy(parent));
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
         network.UnregisterInput(powerTrader);
         network.UnregisterStorage(powerTrader);
     }
@@ -39,10 +39,10 @@ internal class CompQSRWarehouse : ThingComp
 
     public override void CompTick()
     {
-        WarehouseTick(100);
+        warehouseTick(100);
     }
 
-    private void WarehouseTick(int tickAmount)
+    private void warehouseTick(int tickAmount)
     {
         if (Find.TickManager.TicksGame % tickAmount == 0 && Utils.PoweredOn(powerTrader))
         {

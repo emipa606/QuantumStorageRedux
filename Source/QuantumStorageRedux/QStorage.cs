@@ -75,7 +75,7 @@ internal class QStorage
                             existingDefs.Add(thing.def);
                             break;
                         case Kind.Storage:
-                            IndexDef(thing.def, cellIndex, num);
+                            indexDef(thing.def, cellIndex, num);
                             break;
                     }
 
@@ -104,7 +104,7 @@ internal class QStorage
                     continue;
                 }
 
-                var qThing = reqStorage.RequestWithDef(allowedThingDef);
+                var qThing = reqStorage.requestWithDef(allowedThingDef);
                 if (qThing == null || !qThing.AllowedByStorage(qcell.storageSettings))
                 {
                     continue;
@@ -224,7 +224,7 @@ internal class QStorage
         return excluded;
     }
 
-    public QThing RequestWithDef(ThingDef def)
+    private QThing requestWithDef(ThingDef def)
     {
         if (defsIndex == null || !defsIndex.ContainsKey(def) || !defsIndex[def].Any())
         {
@@ -247,18 +247,18 @@ internal class QStorage
             {
                 var cell = qcell.cell;
                 acc.Append($"{cell}: | ");
-                qcell.qthings.Select(qthing => qthing != null ? LogUtils.Display(qthing) + " | " : "null | ").ToList()
+                qcell.qthings.Select(qthing => qthing != null ? $"{LogUtils.Display(qthing)} | " : "null | ").ToList()
                     .ForEach(delegate(string row) { acc.Append(row); });
                 acc.Append("\n");
                 return acc;
             }).ToString();
     }
 
-    private void IndexDef(ThingDef def, int cellIndex, int thingIndex)
+    private void indexDef(ThingDef def, int cellIndex, int thingIndex)
     {
         if (!defsIndex.ContainsKey(def))
         {
-            defsIndex.Add(def, new List<(int, int)>());
+            defsIndex.Add(def, []);
         }
 
         defsIndex[def].Add((cellIndex, thingIndex));

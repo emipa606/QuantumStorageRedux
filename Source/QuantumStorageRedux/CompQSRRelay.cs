@@ -19,9 +19,9 @@ internal class CompQSRRelay : ThingComp
         network.RegisterRelay(powerTrader, GenAdj.CellsOccupiedBy(parent));
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
         network.UnregisterInput(powerTrader);
         network.UnregisterRelay(powerTrader);
     }
@@ -39,10 +39,10 @@ internal class CompQSRRelay : ThingComp
 
     public override void CompTick()
     {
-        RelayTick(100);
+        relayTick(100);
     }
 
-    private void RelayTick(int tickAmount)
+    private void relayTick(int tickAmount)
     {
         if (Find.TickManager.TicksGame % tickAmount == 0 && Utils.PoweredOn(powerTrader))
         {

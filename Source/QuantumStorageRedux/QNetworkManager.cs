@@ -9,7 +9,7 @@ internal static class QNetworkManager
 {
     private static readonly HashSet<QNetwork> localNetworks = [];
 
-    private static readonly Dictionary<Map, QNetwork> globalNetworks = new Dictionary<Map, QNetwork>();
+    private static readonly Dictionary<Map, QNetwork> globalNetworks = new();
 
     public static QNetwork Get(Map map)
     {

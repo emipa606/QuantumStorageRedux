@@ -14,7 +14,7 @@ internal class Alert_NoQuantumStorageSpace : Alert
         defaultPriority = AlertPriority.High;
     }
 
-    protected override Color BGColor { get; } = new Color(1f, 0.9215686f, 0.01568628f, 0.35f);
+    protected override Color BGColor { get; } = new(1f, 0.9215686f, 0.01568628f, 0.35f);
 
     public override AlertReport GetReport()
     {
@@ -31,7 +31,7 @@ internal class Alert_NoQuantumStorageSpace : Alert
 
         var storages = homeMap.listerBuildings.allBuildingsColonist.Where(building =>
             building.TryGetComp<CompQSRStockpile>() != null || building.TryGetComp<CompQSRWarehouse>() != null ||
-            building.TryGetComp<CompQSRRelay>() != null);
+            building.TryGetComp<CompQSRRelay>() != null).ToArray();
         if (!storages.Any())
         {
             return true;

@@ -28,7 +28,7 @@ internal class QNetwork
         storage = new Dictionary<CompPowerTrader, IEnumerable<IntVec3>>();
         relays = new Dictionary<CompPowerTrader, IEnumerable<IntVec3>>();
         currentTick = 0;
-        cellCapacity = CalculateCellCapacity();
+        cellCapacity = calculateCellCapacity();
         isFull = false;
     }
 
@@ -80,8 +80,8 @@ internal class QNetwork
         }
 
         currentTick = tick;
-        cellCapacity = CalculateCellCapacity();
-        var intVec3s =
+        cellCapacity = calculateCellCapacity();
+        var intVec3S =
             new HashSet<IntVec3>(input.Where(powerTrader => Utils.PoweredOn(powerTrader.Key)).SelectMany(x => x.Value));
         var cells2 = storage.Where(storeSpace => Utils.PoweredOn(storeSpace.Key)).SelectMany(x => x.Value).ToList();
         var source = (from cells in (from x in relays where Utils.PoweredOn(x.Key) select x.Value.ToList()).ToList()
@@ -95,32 +95,32 @@ internal class QNetwork
 
                     return thing.stackCount >= thing.def.stackLimit;
                 })).ToList();
-        var qstorage = new QStorage(QStorage.Kind.Storage, cellCapacity).FromCells(map, cells2,
+        var quantumStorage = new QStorage(QStorage.Kind.Storage, cellCapacity).FromCells(map, cells2,
             (_, thing) => thing.stackCount >= thing.def.stackLimit);
         (from thing in Enumerable.Concat(
-                second: from thing in intVec3s.Where(cell => Utils.Priority(map, cell) != StoragePriority.Unstored)
+                second: from thing in intVec3S.Where(cell => Utils.Priority(map, cell) != StoragePriority.Unstored)
                     .SelectMany(cell => Utils.GetItemList(map, cell))
                 select new QThing(thing, QThing.Source.Input),
-                first: source.SelectMany(qrelay => qrelay.ExcludedThings()).Concat(qstorage.ExcludedThings()))
+                first: source.SelectMany(qrelay => qrelay.ExcludedThings()).Concat(quantumStorage.ExcludedThings()))
             group thing by thing.stackCount < thing.def.stackLimit).Deconstruct(out var pos, out var neg);
-        var second2 = MergePartialStacks(pos);
+        var second2 = mergePartialStacks(pos);
         var insertionQueue = neg.Concat(second2).ToList();
         var second3 = source.SelectMany(delegate(QStorage relay)
         {
-            relay.InsertToRelay(insertionQueue, qstorage);
+            relay.InsertToRelay(insertionQueue, quantumStorage);
             return relay.Diff();
         }).ToList();
-        qstorage.Insert(insertionQueue);
-        var second4 = qstorage.Diff();
+        quantumStorage.Insert(insertionQueue);
+        var second4 = quantumStorage.Diff();
         isFull = insertionQueue.Any();
-        foreach (var item in insertionQueue.SelectMany(qthing => qthing.MoveOut(map, intVec3s.RandomElement()).actions)
+        foreach (var item in insertionQueue.SelectMany(qthing => qthing.MoveOut(map, intVec3S.RandomElement()).actions)
                      .Concat(second3).Concat(second4))
         {
             item.Perform();
         }
     }
 
-    private int CalculateCellCapacity()
+    private static int calculateCellCapacity()
     {
         var num = 2;
         if (DefDatabase<ResearchProjectDef>.GetNamed("ResearchProject_QSRCapacityUpgrade_1").IsFinished)
@@ -146,36 +146,36 @@ internal class QNetwork
         return num;
     }
 
-    private List<QThing> MergePartialStacks(IEnumerable<QThing> partialStacks)
+    private static List<QThing> mergePartialStacks(IEnumerable<QThing> partialStacks)
     {
         return partialStacks.GroupBy(x => x.def.shortHash).Aggregate([],
-            delegate(List<QThing> qthings, IGrouping<ushort, QThing> defStacks)
+            delegate(List<QThing> quantumThings, IGrouping<ushort, QThing> defStacks)
             {
                 var qThing = defStacks.Aggregate(new QThing(defStacks.First().thing, QThing.Source.Merge),
-                    delegate(QThing composite, QThing qthing)
+                    delegate(QThing composite, QThing quantumThing)
                     {
-                        var num = qthing.stackCount;
-                        var num2 = composite.stackCount + num - qthing.def.stackLimit;
+                        var num = quantumThing.stackCount;
+                        var num2 = composite.stackCount + num - quantumThing.def.stackLimit;
                         if (num2 > 0)
                         {
                             num -= num2;
                         }
 
-                        composite.Absorb(qthing, num);
+                        composite.Absorb(quantumThing, num);
                         if (composite.stackCount != composite.def.stackLimit)
                         {
                             return composite;
                         }
 
-                        qthings.Add(composite);
-                        return new QThing(qthing.thing, QThing.Source.Merge).Absorb(qthing, num2);
+                        quantumThings.Add(composite);
+                        return new QThing(quantumThing.thing, QThing.Source.Merge).Absorb(quantumThing, num2);
                     });
                 if (qThing.stackCount > 0)
                 {
-                    qthings.Add(qThing);
+                    quantumThings.Add(qThing);
                 }
 
-                return qthings;
+                return quantumThings;
             });
     }
 }

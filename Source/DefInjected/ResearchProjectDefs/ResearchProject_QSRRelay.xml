@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <ResearchProject_QSRRelay.label>Quantum Relays</ResearchProject_QSRRelay.label>
   <ResearchProject_QSRRelay.description>Allows construction of quantum relays: stand-alone devices that can connect to the global quantum network to transfer items back and forth.

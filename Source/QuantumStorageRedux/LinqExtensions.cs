@@ -11,7 +11,7 @@ internal static class LinqExtensions
         return seq.Select((item, index) => (item, index));
     }
 
-    internal static IEnumerable<(A, B)> Zip<A, B>(this IEnumerable<A> seqA, IEnumerable<B> seqB)
+    internal static IEnumerable<(TA, TB)> Zip<TA, TB>(this IEnumerable<TA> seqA, IEnumerable<TB> seqB)
     {
         if (seqA == null)
         {

@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>dc60eb0a-5de4-445b-9246-621f4056b99d</ID>
   <ModName>Quantum Storage Redux (Continued)</ModName>
-  <Version>1.5.1</Version>
+  <Version>1.6.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,3 +12,4 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+

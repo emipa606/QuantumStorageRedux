@@ -67,18 +67,13 @@ public static class Utils
         FleckMaker.ThrowDustPuff(cell.ToVector3() + new Vector3(0.5f, 0f, 0.5f), map, 0.5f);
     }
 
-    public static void ThrowSparkle(Map map, IntVec3 cell)
-    {
-        FleckMaker.ThrowLightningGlow(cell.ToVector3() + new Vector3(0.5f, 0f, 0.5f), map, 0.05f);
-    }
-
     public static void DropSound(Map map, IntVec3 cell, ThingDef thingDef)
     {
         thingDef.soundDrop?.PlayOneShot(SoundInfo.InMap(new TargetInfo(cell, map)));
     }
 
     public static Thing Spawn(Thing thing, IntVec3 loc, Map map, Rot4 rot, WipeMode wipeMode = WipeMode.Vanish,
-        bool respawningAfterLoad = false, bool forbidLeavings = false)
+        bool respawningAfterLoad = false)
     {
         if (thing.Spawned)
         {

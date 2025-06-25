@@ -1,0 +1,6 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="QuantumStorageRedux/QuantumStorageRedux.csproj" />
+</Solution>

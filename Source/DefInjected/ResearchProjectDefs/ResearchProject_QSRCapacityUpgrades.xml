@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <ResearchProject_QSRCapacityUpgrade_1.label>Quantum Storage capacity 1</ResearchProject_QSRCapacityUpgrade_1.label>
   <ResearchProject_QSRCapacityUpgrade_1.description>Increases Quantum Storage cell capacity by 2, up to 6 stacks per cell.</ResearchProject_QSRCapacityUpgrade_1.description>
